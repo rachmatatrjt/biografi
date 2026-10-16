@@ -192,6 +192,40 @@
   }
   .insp .desc{color:var(--teks-muda);font-size:.86rem;}
 
+  /* ——— Ekosistem Digital ——— */
+  .eco-diagram{
+    background:var(--kertas);
+    border:1px solid var(--garis);
+    border-radius:4px;
+    padding:20px 22px;
+    margin-top:14px;
+    font-family:'Segoe UI', system-ui, sans-serif;
+    font-size:.9rem;
+    line-height:2;
+  }
+  .eco-diagram .row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:8px 0;
+    border-bottom:1px dashed var(--garis);
+  }
+  .eco-diagram .row:last-child{border-bottom:none;}
+  .eco-diagram .badge{
+    display:inline-block;
+    min-width:110px;
+    padding:3px 10px;
+    border-radius:4px;
+    font-size:.78rem;
+    font-weight:600;
+    text-align:center;
+  }
+  .badge-rumah{background:rgba(74,103,65,0.15);color:var(--daun);border:1px solid var(--daun-muda);}
+  .badge-jendela{background:rgba(122,158,159,0.15);color:#4a7a7b;border:1px solid var(--langit);}
+  .badge-pintu{background:rgba(201,123,74,0.12);color:var(--senja);border:1px solid var(--senja);}
+  .eco-diagram .desc{color:var(--teks-muda);font-size:.85rem;}
+
+  /* ——— Kontak ——— */
   .kontak{
     display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;
   }
@@ -232,6 +266,7 @@
     section{padding:22px 20px;}
     h1{font-size:1.6rem;}
     body{padding:28px 14px;}
+    .eco-diagram .row{flex-direction:column;align-items:flex-start;gap:4px;}
   }
 </style>
 </head>
@@ -313,19 +348,18 @@
       </div>
     </section>
 
-    <!-- ——— TIMELINE PACK (REVISI: tanggal asli) ——— -->
     <section>
       <h2><span class="icon">📦</span> Linimasa Rilis Pack</h2>
       <div class="pack-grid">
-        <div class="pack"><div class="name">1. User Interface</div><div class="date">31 Mei</div></div>
-        <div class="pack"><div class="name">2. Base Character</div><div class="date">31 Mei</div></div>
-        <div class="pack"><div class="name">3. Char Costumization</div><div class="date">27 Juni</div></div>
-        <div class="pack"><div class="name">4. Ale Lino</div><div class="date">05 Juli</div></div>
+        <div class="pack"><div class="name">1. Font Sureq Lontara</div><div class="date">31 Mei</div></div>
+        <div class="pack"><div class="name">2. Diverse Folk &amp; Beasts</div><div class="date">31 Mei</div></div>
+        <div class="pack"><div class="name">3. Item Cosmology</div><div class="date">27 Juni</div></div>
+        <div class="pack"><div class="name">4. Buriq Liu</div><div class="date">05 Juli</div></div>
         <div class="pack"><div class="name">5. Botting Langiq</div><div class="date">16 Juli</div></div>
-        <div class="pack"><div class="name">6. Buriq Liu</div><div class="date">31 Juli</div></div>
-        <div class="pack"><div class="name">7. Item Cosmology</div><div class="date">14 Agustus</div></div>
-        <div class="pack"><div class="name">8. Diverse Folk &amp; Beasts</div><div class="date">09 September</div></div>
-        <div class="pack"><div class="name">9. Font Sureq Lontara</div><div class="date">03 Oktober</div></div>
+        <div class="pack"><div class="name">6. Ale Lino</div><div class="date">31 Juli</div></div>
+        <div class="pack"><div class="name">7. Char Costumization</div><div class="date">14 Agustus</div></div>
+        <div class="pack"><div class="name">8. Base Character</div><div class="date">09 September</div></div>
+        <div class="pack"><div class="name">9. User Interface</div><div class="date">03 Oktober</div></div>
       </div>
     </section>
 
@@ -420,6 +454,42 @@
     </section>
 
     <section>
+      <h2><span class="icon">🌐</span> Ekosistem Digital</h2>
+      <p>
+        Strategi distribusi saya mengikuti prinsip <strong>"1 Rumah, 3 Jendela,
+        1 Pintu Belakang"</strong> — bukan membuka banyak platform sekaligus, tapi
+        fokus pada yang paling berdampak.
+      </p>
+      <div class="eco-diagram">
+        <div class="row">
+          <span class="badge badge-rumah">🏠 Rumah</span>
+          <span class="desc"><strong>GitHub Pages</strong> — biografi, portofolio, pusat semua link</span>
+        </div>
+        <div class="row">
+          <span class="badge badge-jendela">🪟 Jendela 1</span>
+          <span class="desc"><strong>Itch.io</strong> — toko utama, tempat pack dijual</span>
+        </div>
+        <div class="row">
+          <span class="badge badge-jendela">🪟 Jendela 2</span>
+          <span class="desc"><strong>Bluesky</strong> — distribusi utama, komunitas pixel art &amp; indie dev</span>
+        </div>
+        <div class="row">
+          <span class="badge badge-jendela">🪟 Jendela 3</span>
+          <span class="desc"><strong>Reddit</strong> — traffic tambahan, setelah karma cukup</span>
+        </div>
+        <div class="row">
+          <span class="badge badge-pintu">🚪 Pintu Belakang</span>
+          <span class="desc"><strong>Ko-fi</strong> — income langsung, tip, komisi selektif</span>
+        </div>
+      </div>
+      <p style="margin-top:14px;color:var(--teks-muda);font-size:.92rem;">
+        Fokus 3 platform dulu (Itch.io + Bluesky + Ko-fi), konsisten 3 bulan,
+        baru evaluasi. Distribusi bisa melipatgandakan jangkauan pack 5–10× —
+        tapi butuh waktu, bukan instan.
+      </p>
+    </section>
+
+    <section>
       <h2><span class="icon">📊</span> Status Saat Ini</h2>
       <div class="grid">
         <div class="stat">
@@ -446,12 +516,15 @@
     </section>
 
     <section>
-      <h2><span class="icon">✉️</span> Kontak</h2>
+      <h2><span class="icon">✉️</span> Kontak &amp; Platform</h2>
       <p style="margin-bottom:12px;color:var(--teks-muda);font-size:.92rem;">
         Terbuka untuk diskusi, kolaborasi, atau sekadar menyapa.
       </p>
       <div class="kontak">
         <a href="https://rachmata.itch.io" target="_blank" rel="noopener">🎨 Itch.io — rachmata</a>
+        <a href="https://ko-fi.com/rachmata" target="_blank" rel="noopener">☕ Ko-fi — rachmata</a>
+        <a href="https://bsky.app/profile/rama-86.bsky.social" target="_blank" rel="noopener">🦋 Bluesky — rama-86</a>
+        <a href="https://www.reddit.com/user/Rachmata/" target="_blank" rel="noopener">👽 Reddit — u/Rachmata</a>
         <a href="https://twitter.com/Rahmatprnma" target="_blank" rel="noopener">🐦 Twitter — @Rahmatprnma</a>
         <a href="https://discord.com/users/1497595784885960765" target="_blank" rel="noopener">💬 Discord</a>
       </div>
