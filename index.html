@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biografi — Perjalanan Seni & LA GALIGO</title>
+<style>
+  :root{
+    --tanah:#3e2f23;
+    --tanah-muda:#5c4433;
+    --daun:#4a6741;
+    --daun-muda:#6b8f5e;
+    --langit:#7a9e9f;
+    --senja:#c97b4a;
+    --kertas:#f4efe6;
+    --kertas-tua:#e8dfd0;
+    --teks:#2c2419;
+    --teks-muda:#6b5d4f;
+    --garis:#c9bca8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Georgia', 'Times New Roman', serif;
+    background:var(--kertas);
+    color:var(--teks);
+    line-height:1.8;
+    min-height:100vh;
+    padding:48px 20px;
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(107,143,94,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(201,123,74,0.06) 0%, transparent 40%);
+  }
+  .container{max-width:840px;margin:0 auto;}
+
+  /* ——— Header ——— */
+  header{
+    text-align:center;
+    margin-bottom:52px;
+    padding-bottom:32px;
+    border-bottom:2px solid var(--garis);
+  }
+  header .sub{
+    display:inline-block;
+    font-size:.8rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--daun);
+    margin-bottom:14px;
+    font-family:'Segoe UI', system-ui, sans-serif;
+  }
+  h1{
+    font-size:2.2rem;
+    letter-spacing:-0.5px;
+    margin-bottom:10px;
+    color:var(--tanah);
+    font-weight:400;
+    font-style:italic;
+  }
+  header p{
+    color:var(--teks-muda);
+    font-size:1rem;
+    font-family:'Segoe UI', system-ui, sans-serif;
+  }
+  .tags{
+    display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px;
+  }
+  .tag{
+    background:rgba(74,103,65,0.1);
+    border:1px solid rgba(74,103,65,0.3);
+    color:var(--daun);
+    padding:5px 14px;border-radius:20px;
+    font-size:.78rem;
+    font-family:'Segoe UI', system-ui, sans-serif;
+  }
+
+  /* ——— Sections ——— */
+  section{
+    background:var(--kertas-tua);
+    border:1px solid var(--garis);
+    border-radius:4px;
+    padding:28px 30px;
+    margin-bottom:22px;
+    transition:border-color .25s ease, box-shadow .25s ease;
+  }
+  section:hover{
+    border-color:var(--daun-muda);
+    box-shadow:0 4px 18px rgba(62,47,35,0.08);
+  }
+  h2{
+    font-size:1.15rem;
+    margin-bottom:16px;
+    display:flex;align-items:center;gap:10px;
+    color:var(--daun);
+    font-weight:600;
+    font-family:'Segoe UI', system-ui, sans-serif;
+  }
+  h2 .icon{
+    width:28px;height:28px;border-radius:6px;
+    background:rgba(74,103,65,0.12);
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:14px;
+  }
+  p,li{color:var(--teks);}
+  ul{padding-left:20px;}
+  li{margin-bottom:8px;color:var(--teks-muda);}
+  li::marker{color:var(--daun-muda);}
+  .highlight{color:var(--daun);font-weight:600;}
+  .highlight-2{color:var(--senja);font-weight:600;}
+
+  /* ——— Timeline ——— */
+  .timeline{position:relative;padding-left:28px;margin-top:6px;}
+  .timeline::before{
+    content:'';position:absolute;left:6px;top:6px;bottom:6px;
+    width:2px;background:linear-gradient(var(--daun),var(--senja));
+    opacity:.35;border-radius:2px;
+  }
+  .timeline-item{position:relative;margin-bottom:18px;}
+  .timeline-item::before{
+    content:'';position:absolute;left:-26px;top:9px;
+    width:10px;height:10px;border-radius:50%;
+    background:var(--daun);
+    box-shadow:0 0 0 3px rgba(74,103,65,0.15);
+  }
+  .timeline-item strong{
+    display:block;color:var(--tanah);
+    font-family:'Segoe UI', system-ui, sans-serif;
+    font-size:.95rem;
+  }
+  .timeline-item span{color:var(--teks-muda);font-size:.9rem;}
+
+  /* ——— Stat Grid ——— */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;}
+  .stat{
+    background:var(--kertas);
+    border:1px solid var(--garis);
+    border-radius:4px;
+    padding:16px 18px;
+  }
+  .stat .num{
+    font-size:1.5rem;font-weight:700;color:var(--daun);
+    font-family:'Segoe UI', system-ui, sans-serif;
+  }
+  .stat .label{
+    color:var(--teks-muda);font-size:.82rem;
+    font-family:'Segoe UI', system-ui, sans-serif;
+  }
+
+  /* ——— LA GALIGO spotlight ——— */
+  .galigo-box{
+    background:linear-gradient(135deg, rgba(74,103,65,0.06), rgba(201,123,74,0.06));
+    border-left:4px solid var(--daun);
+    border-radius:0 4px 4px 0;
+    padding:18px 22px;margin-top:14px;
+  }
+  .galigo-box p{font-size:.95rem;color:var(--teks-muda);}
+  .galigo-box a{
+    color:var(--daun);font-weight:600;text-decoration:none;
+    border-bottom:1px dotted var(--daun-muda);
+    transition:color .2s;
+    font-family:'Segoe UI', system-ui, sans-serif;font-size:.9rem;
+  }
+  .galigo-box a:hover{color:var(--senja);border-bottom-color:var(--senja);}
+
+  /* ——— Pack Grid ——— */
+  .pack-grid{
+    display:grid;grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+    gap:12px;margin-top:12px;
+  }
+  .pack{
+    background:var(--kertas);
+    border:1px solid var(--garis);
+    border-left:3px solid var(--daun-muda);
+    border-radius:0 4px 4px 0;
+    padding:12px 14px;
+  }
+  .pack .name{
+    font-weight:600;color:var(--tanah);
+    font-size:.92rem;
+    font-family:'Segoe UI', system-ui, sans-serif;
+  }
+  .pack .date{
+    color:var(--teks-muda);font-size:.78rem;
+    font-family:'Segoe UI', system-ui, sans-serif;
+  }
+
+  /* ——— Inspirasi Card ——— */
+  .insp-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;
+  }
+  .insp{
+    background:var(--kertas);
+    border:1px solid var(--garis);
+    border-radius:4px;
+    padding:14px 16px;
+  }
+  .insp .title{
+    font-weight:600;color:var(--daun);margin-bottom:4px;
+    font-family:'Segoe UI', system-ui, sans-serif;font-size:.92rem;
+  }
+  .insp .desc{color:var(--teks-muda);font-size:.86rem;}
+
+  /* ——— Kontak ——— */
+  .kontak{
+    display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;
+  }
+  .kontak a{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--kertas);
+    border:1px solid var(--garis);
+    color:var(--tanah);
+    padding:10px 18px;border-radius:4px;
+    text-decoration:none;
+    font-family:'Segoe UI', system-ui, sans-serif;
+    font-size:.88rem;
+    transition:all .2s ease;
+  }
+  .kontak a:hover{
+    background:var(--daun);color:var(--kertas);
+    border-color:var(--daun);
+    transform:translateY(-1px);
+  }
+
+  /* ——— Blockquote (filosofi) ——— */
+  blockquote{
+    border-left:3px solid var(--senja);
+    padding:4px 0 4px 18px;
+    margin:14px 0;
+    font-style:italic;
+    color:var(--teks-muda);
+  }
+
+  /* ——— Footer ——— */
+  footer{
+    text-align:center;color:var(--teks-muda);font-size:.82rem;
+    margin-top:48px;padding-top:24px;
+    border-top:1px solid var(--garis);
+    font-family:'Segoe UI', system-ui, sans-serif;
+  }
+
+  @media(max-width:560px){
+    .grid,.insp-grid{grid-template-columns:1fr;}
+    section{padding:22px 20px;}
+    h1{font-size:1.6rem;}
+    body{padding:28px 14px;}
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ——— HEADER ——— -->
+    <header>
+      <span class="sub">Biografi</span>
+      <h1>Perjalanan Seni &amp; LA GALIGO</h1>
+      <p>Mahasiswa TRJT &bull; Seniman Game Solo &bull; Penjaga Warisan Digital</p>
+      <div class="tags">
+        <span class="tag">Pixel Art 32×32</span>
+        <span class="tag">Game Art</span>
+        <span class="tag">LA GALIGO</span>
+        <span class="tag">Aseprite + Lua</span>
+        <span class="tag">Python Automation</span>
+        <span class="tag">Itch.io Creator</span>
+        <span class="tag">AI-Assisted Workflow</span>
+      </div>
+    </header>
+
+    <!-- ——— TENTANG ——— -->
+    <section>
+      <h2><span class="icon">👤</span> Tentang Saya</h2>
+      <p>
+        Seorang mahasiswa jurusan <span class="highlight">Teknologi Rekayasa Jaringan Telekomunikasi</span>
+        di <span class="highlight-2">Politeknik Negeri Ujung Pandang</span>. Di tengah
+        kesibukan akademik, saya menekuni dunia <strong>pixel art</strong> dan
+        <strong>game development</strong> secara serius — memulai perjalanan Itch.io
+        sejak <span class="highlight">26 Mei</span>, dan terus konsisten hingga kini.
+        Semua karya saya berakar pada satu visi besar: <strong>LA GALIGO</strong>.
+      </p>
+    </section>
+
+    <!-- ——— LATAR BELAKANG ——— -->
+    <section>
+      <h2><span class="icon">🕹️</span> Latar Belakang Seni</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>Sekolah Menengah Pertama</strong>
+          <span>Awal ketertarikan pada seni — menggambar tradisional hitam-putih, menjadi fondasi dasar dalam memahami bentuk dan komposisi.</span>
+        </div>
+        <div class="timeline-item">
+          <strong>Kelas 11 SMA — Semester Akhir</strong>
+          <span>Mulai berlatih <em>pixel art</em> secara intensif. Di sinilah gaya visual saya mulai terbentuk dan menemukan identitasnya.</span>
+        </div>
+        <div class="timeline-item">
+          <strong>Kelas 12 SMA — Semester Akhir</strong>
+          <span>Pack 1–7 dirilis di tengah kesibukan ujian. Sudah mulai menghasilkan, walau tabungan masih sekitar Rp600.000.</span>
+        </div>
+        <div class="timeline-item">
+          <strong>26 Mei — Sekarang</strong>
+          <span>Menekuni Itch.io secara serius sebagai jalur berkarya, pelestarian budaya digital, dan <em>passive income</em>.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ——— LA GALIGO ——— -->
+    <section>
+      <h2><span class="icon">📜</span> Proyek LA GALIGO</h2>
+      <p>
+        Seluruh proyek Itch.io saya dirancang untuk menjelaskan visi yang sama:
+        <span class="highlight">LA GALIGO</span> — epik mitos penciptaan dari peradaban
+        Bugis di Sulawesi Selatan, karya sastra terpanjang di dunia dan warisan budaya
+        paling berharga dari tanah Bugis. Saya mengangkat kisah ini ke medium
+        <strong>pixel art</strong> dan <strong>game art</strong> sebagai bentuk
+        pelestarian budaya yang relevan di era digital — <em>tanpa tekanan dari pihak
+        luar</em>, murni karena panggilan personal.
+      </p>
+      <div class="galigo-box">
+        <p>
+          🌾 <strong>Koleksi LA GALIGO di Itch.io:</strong><br>
+          Dimulai dari <em>Font Sureq Lontara</em>, <em>Diverse Folk &amp; Beasts</em>,
+          <em>Item Cosmology</em>, <em>Buriq Liu</em>, <em>Ale Lino</em>,
+          <em>Char Costumization</em>, <em>Botting Langiq</em>, <em>Base Character</em>,
+          hingga <em>User Interface</em> — semuanya adalah bagian dari satu dunia
+          visual yang utuh.
+        </p>
+        <p style="margin-top:12px;">
+          🔗 <a href="https://rachmata.itch.io" target="_blank" rel="noopener">rachmata.itch.io</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ——— TIMELINE PACK ——— -->
+    <section>
+      <h2><span class="icon">📦</span> Linimasa Rilis Pack</h2>
+      <div class="pack-grid">
+        <div class="pack"><div class="name">1. Font Sureq Lontara</div><div class="date">31 Mei</div></div>
+        <div class="pack"><div class="name">2. Diverse Folk &amp; Beasts</div><div class="date">31 Mei</div></div>
+        <div class="pack"><div class="name">3. Item Cosmology</div><div class="date">27 Juni</div></div>
+        <div class="pack"><div class="name">4. Buriq Liu</div><div class="date">05 Juli</div></div>
+        <div class="pack"><div class="name">5. Ale Lino</div><div class="date">92 hari lalu</div></div>
+        <div class="pack"><div class="name">6. Char Costumization</div><div class="date">77 hari lalu</div></div>
+        <div class="pack"><div class="name">7. Botting Langiq</div><div class="date">63 hari lalu</div></div>
+        <div class="pack"><div class="name">8. Base Character</div><div class="date">37 hari lalu</div></div>
+        <div class="pack"><div class="name">9. User Interface</div><div class="date">13 hari lalu</div></div>
+      </div>
+    </section>
+
+    <!-- ——— INSPIRASI ——— -->
+    <section>
+      <h2><span class="icon">🌌</span> Inspirasi &amp; Referensi</h2>
+      <div class="insp-grid">
+        <div class="insp">
+          <div class="title">Berserk</div>
+          <div class="desc">Nuansa gelap, emosional, dan epik yang mengakar kuat pada karya <em>Buriq Liu</em>.</div>
+        </div>
+        <div class="insp">
+          <div class="title">Naskah LA GALIGO</div>
+          <div class="desc">Sumber ide utama yang tak pernah habis — dunia, mitologi, dan tokoh-tokohnya belum tergarap di pasar.</div>
+        </div>
+        <div class="insp">
+          <div class="title">Hyper Light Drifter</div>
+          <div class="desc">Referensi mekanik dan perspektif game — ritme, atmosfer, dan rasa penjelajahan.</div>
+        </div>
+        <div class="insp">
+          <div class="title">Blasphemous</div>
+          <div class="desc">Standar kualitas <em>vibe</em> art yang saya kejar — walau tetap dengan grid pixel art standar 32×32 px.</div>
+        </div>
+      </div>
+      <blockquote>
+        Grid 32×32 px dipilih karena realistis untuk skala <em>solo game art developer</em>
+        — cukup detail untuk bercerita, cukup efisien untuk dikerjakan sendiri.
+      </blockquote>
+    </section>
+
+    <!-- ——— ALUR KERJA & TOOLS ——— -->
+    <section>
+      <h2><span class="icon">🛠️</span> Alat &amp; Alur Kerja</h2>
+      <ul>
+        <li><strong>Aseprite</strong> sebagai kanvas utama pixel art, diperkuat <strong>script Lua</strong> untuk otomatisasi proses.</li>
+        <li><strong>Sistem manajemen file</strong> buatan sendiri berbasis <strong>Python</strong>, <strong>JSON</strong>, dan <strong>Markdown</strong> — untuk merapikan aset, metadata, dan katalog pack.</li>
+        <li><strong>Godot</strong> sempat dipakai intens sebagai game engine, namun sekitar 2 bulan setelah serius di Itch.io, saya beralih arah ke <strong>website bantuan AI</strong> sebagai basis workflow.</li>
+        <li><strong>AI</strong> dimanfaatkan menyeluruh: sebagai programmer website GitHub, pengelola project berskala, hingga mencapai tahap <strong>otomasi</strong>.</li>
+      </ul>
+      <p style="margin-top:12px;color:var(--teks-muda);font-size:.92rem;">
+        Semua dikerjakan solo — dari hulu (konsep visual) sampai hilir (publikasi),
+        ditopang otomatisasi agar tetap efisien.
+      </p>
+    </section>
+
+    <!-- ——— FILOSOFI SOLO DEVELOPER ——— -->
+    <section>
+      <h2><span class="icon">🛤️</span> Filosofi Solo Developer</h2>
+      <p>
+        <strong>Alasan utama:</strong> mengejar <span class="highlight">financial freedom</span>
+        agar bisa mengakses bidang yang lebih luas dan mendalam tanpa tekanan finansial —
+        khususnya sebagai <em>game developer</em> dan <em>composer profesional</em>.
+        Kuliah TRJT dipertahankan sebagai <span class="highlight-2">jaring pengaman</span>.
+      </p>
+      <p style="margin-top:10px;">
+        <strong>Tantangan:</strong> waktu dan energi jauh lebih padat, ditambah
+        <em>kontras otak</em> yang harus berpindah antara logika teknik jaringan dan
+        intuisi artistik.
+      </p>
+      <p style="margin-top:10px;">
+        <strong>Keunggulan:</strong> saat tugas kuliah membutuhkan elemen visual atau
+        aspek seni profesional, saya sudah aman. Status mahasiswa juga membuat saya
+        tidak terlalu terkekang tuntutan mencari uang lewat <em>active income</em>.
+      </p>
+      <blockquote>
+        "Bekerja solo bukan karena tidak bisa bekerja dengan orang lain — tapi karena
+        ingin membangun fondasi kebebasan yang tidak bisa dikompromikan."
+      </blockquote>
+    </section>
+
+    <!-- ——— PERJALANAN FINANSIAL ——— -->
+    <section>
+      <h2><span class="icon">🌾</span> Perjalanan Finansial &amp; Titik Balik</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>Kelas 12 SMA — Semester Akhir</strong>
+          <span>Sudah mulai pixel art dan merilis Pack 1–7, tapi tabungan masih sekitar Rp600.000.</span>
+        </div>
+        <div class="timeline-item">
+          <strong>Lolos SNBP</strong>
+          <span>Seleksi Nasional Berbasis Prestasi — sekaligus mendapatkan UKT hanya Rp1 juta per semester.</span>
+        </div>
+        <div class="timeline-item">
+          <strong>Kerja Fisik Intensif (±3–4 bulan)</strong>
+          <span>Hingga akhir Juli / awal Agustus, membantu usaha orang tua — depot air galon isi ulang &amp; berkebun. Pagi sampai sore kerja fisik, malamnya game art di kamar.</span>
+        </div>
+        <div class="timeline-item">
+          <strong>Terkumpul Rp8 Juta (Kotor)</strong>
+          <span>Mencakup UKT, persiapan PKKMB PNUP, dan segala keperluan perantauan. Bersihnya sekitar Rp5 juta (kos ditanggung orang tua).</span>
+        </div>
+        <div class="timeline-item">
+          <strong>18 Agustus</strong>
+          <span>Membeli laptop <strong>Dell Latitude 7480 bekas</strong> seharga Rp3,5 juta — RAM 8GB (1 slot masih kosong), penyimpanan 256GB. Inilah mesin perang yang menemani seluruh karya.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ——— STATUS ——— -->
+    <section>
+      <h2><span class="icon">📊</span> Status Saat Ini</h2>
+      <div class="grid">
+        <div class="stat">
+          <div class="num">35+</div>
+          <div class="label">Target Pack Publikasi</div>
+        </div>
+        <div class="stat">
+          <div class="num">Solo</div>
+          <div class="label">Game Artist &amp; Manager</div>
+        </div>
+        <div class="stat">
+          <div class="num">9</div>
+          <div class="label">Pack Telah Terbit</div>
+        </div>
+        <div class="stat">
+          <div class="num">Passive</div>
+          <div class="label">Target Penghasilan</div>
+        </div>
+      </div>
+      <p style="margin-top:16px;color:var(--teks-muda);font-size:.92rem;">
+        Kondisi ekonomi masih mengandalkan tabungan dari orang tua dan keluarga,
+        sambil terus membangun jalur <em>passive income</em> dari Itch.io.
+      </p>
+    </section>
+
+    <!-- ——— KONTAK ——— -->
+    <section>
+      <h2><span class="icon">✉️</span> Kontak</h2>
+      <p style="margin-bottom:12px;color:var(--teks-muda);font-size:.92rem;">
+        Terbuka untuk diskusi, kolaborasi, atau sekadar menyapa.
+      </p>
+      <div class="kontak">
+        <a href="https://rachmata.itch.io" target="_blank" rel="noopener">🎨 Itch.io — rachmata</a>
+        <a href="https://twitter.com/Rahmatprnma" target="_blank" rel="noopener">🐦 Twitter — @Rahmatprnma</a>
+        <a href="https://discord.com/users/1497595784885960765" target="_blank" rel="noopener">💬 Discord</a>
+      </div>
+    </section>
+
+    <!-- ——— FOOTER ——— -->
+    <footer>
+      &copy; <span id="year"></span> — Ditenun piksel demi piksel, dari tanah Bugis.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
